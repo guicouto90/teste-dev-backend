@@ -762,7 +762,7 @@ describe('GET /customers/:id', () => {
         ],
         creationDate: new Date().toISOString(),
         updateDate: new Date().toISOString(),
-        score,
+        score: 56,
       });
 
       const { insertedId } = id;
@@ -779,7 +779,6 @@ describe('GET /customers/:id', () => {
     });
 
     it('Return property "_id", "name", "birthDate", "sex", "healthProblems", "creationDate", "updateDate", "score" in the body', () => {
-      console.log(response.body);
       expect(response.body).to.have.property('_id');
       expect(response.body).to.have.property('name');
       expect(response.body).to.have.property('birthDate');
