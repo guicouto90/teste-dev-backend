@@ -9,25 +9,26 @@
 # Intruções de uso:
 
 Clone o respositório e instale as dependencias com o comando npm install ou acesse o seguinte link com o deploy da aplicação:
-<LINK DO DEPLOY>
+https://backend-api-test-olisaude.herokuapp.com/
   
 A aplicação foi desenvolvida seguindo arquitetura MSC.
 Os endpoints que foram desenvolvidos são:
 - Método POST com o endpoint '/customers' para criação de novos clientes.
   Para criação de novos clientes é necessário preencher os campos seguintes campos:
+  ```json
   {
-    name: tipo string com minimo 3 caracteres,
-    birthDate: tipo data padrão ISO8601 - 'YYYY-MM-DD',
-    sex: tipo string, e deve ser preenchid com 'male' ou 'female',
-    healthProblems: tipo array
+    "name": "tipo string com minimo 3 caracteres",
+    "birthDate": "tipo data padrão ISO8601 - 'YYYY-MM-DD'",
+    "sex": "tipo string, e deve ser preenchid com 'male' ou 'female'",
+    "healthProblems": "tipo array"
         [
           {
-            name: tipo string com minimo 2 caracteres,
-            level: tipo numero entre 1 e 2
+            "name": "tipo string com minimo 2 caracteres",
+            "level": "tipo numero entre 1 e 2"
           }
         ]
   }
- 
+  ```
  - Método PUT com endpoint '/customers/:id' para edição de clientes já existentes.
     Para editar clientes existentes é necessário seguir o padrão de preenchimento com os campos exigidos no método POST de criação de novos clientes. Utilizando o      id para acessar um cliente especifico.
   - Método GET com endpoint '/customers' para acessar todos os clientes cadastrados.
