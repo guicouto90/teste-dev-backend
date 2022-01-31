@@ -38,5 +38,5 @@ Os endpoints que foram desenvolvidos são:
 
   # Contato
   Qualquer dúvida ou sugestão, me contate por:
-  Email: gui.couto90@yahoo.com.br
-  LinkedIn: https://www.linkedin.com/in/guicouto90/
+  - Email: gui.couto90@yahoo.com.br
+  - LinkedIn: https://www.linkedin.com/in/guicouto90/
