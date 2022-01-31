@@ -14,7 +14,7 @@ https://backend-api-test-olisaude.herokuapp.com/
 A aplicação foi desenvolvida seguindo arquitetura MSC.
 Os endpoints que foram desenvolvidos são:
 - Método POST com o endpoint '/customers' para criação de novos clientes.
-  Para criação de novos clientes é necessário preencher os campos seguintes campos:
+  Para criação de novos clientes é necessário preencher os seguintes campos:
   ```json
   {
     "name": "tipo string com minimo 3 caracteres",
@@ -30,8 +30,13 @@ Os endpoints que foram desenvolvidos são:
   }
   ```
  - Método PUT com endpoint '/customers/:id' para edição de clientes já existentes.
-    Para editar clientes existentes é necessário seguir o padrão de preenchimento com os campos exigidos no método POST de criação de novos clientes. Utilizando o      id para acessar um cliente especifico.
+    Para editar clientes existentes é necessário seguir o padrão de preenchimento com os campos exigidos no método POST. Utilizando o id para acessar um cliente especifico.
   - Método GET com endpoint '/customers' para acessar todos os clientes cadastrados.
   - Método GET com endpoint '/customers/:id' para acessar um cliente especifico com o seu id de cadastro.
   - Método DELETE com endpoint '/customers/:id' para deletar um cliente especifico com o seu id de cadastro.
-  - Método GET com endpoint '/healthproblems' para listar os 10 primeiros clientes que possuem o maior risco de saúde. 
+  - Método GET com endpoint '/healthproblems' para listar os 10 primeiros clientes que possuem o maior risco de saúde.
+
+  # Contato
+  Qualquer dúvida ou sugestão, me contate por:
+  Email: gui.couto90@yahoo.com.br
+  LinkedIn: https://www.linkedin.com/in/guicouto90/
