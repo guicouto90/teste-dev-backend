@@ -1,7 +1,5 @@
 const {
-  validateSchema,
   insertCustomer,
-  checkCustomer,
   updateCustomer,
   listById,
   listAll,
@@ -10,7 +8,6 @@ const {
 
 const newCustomer = async (req, res, next) => {
   try {
-    validateSchema(req.body);
     const result = await insertCustomer(req.body);
 
     return res.status(201).json(result);
@@ -23,9 +20,6 @@ const newCustomer = async (req, res, next) => {
 const modifyCustomer = async (req, res, next) => {
   try {
     const { id } = req.params;
-    validateSchema(req.body);
-    await checkCustomer(id);
-
     const result = await updateCustomer(id, req.body);
 
     return res.status(200).json(result);
@@ -38,8 +32,6 @@ const modifyCustomer = async (req, res, next) => {
 const getById = async (req, res, next) => {
   try {
     const { id } = req.params;
-    await checkCustomer(id);
-
     const result = await listById(id);
 
     return res.status(200).json(result);
@@ -62,7 +54,6 @@ const getAll = async (req, res, next) => {
 const eraseCustomerById = async (req, res, next) => {
   try {
     const { id } = req.params;
-    await checkCustomer(id);
     const result = await deleteCustomerById(id);
 
     return res.status(200).json(result);

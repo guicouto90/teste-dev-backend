@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.get('/', (req, res) => {
   res.send('<h2> WELCOME, please access the endpoint "/customers" or "/healthproblems" </h2>');
-})
+});
 
 app.use('/customers', customersRouter);
 

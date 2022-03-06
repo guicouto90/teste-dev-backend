@@ -10,7 +10,8 @@ const customerSchemaNew = joi.object({
   sex: joi.string().min(4).max(6).required(),
   healthProblems: joi.array().items(joi.object({
     name: joi.string().min(2).required(),
-    level: joi.number().min(1).max(2).strict().required(),
+    level: joi.number().min(1).max(2).strict()
+      .required(),
   })).required(),
 });
 
@@ -34,6 +35,7 @@ const insertCustomer = async (body) => {
   const {
     name, birthDate, sex, healthProblems,
   } = body;
+  validateSchema(body);
   let sd = 0;
   healthProblems.forEach((problem) => sd = problem.level + sd);
   const score = Math.round((1 / (1 + Math.exp(-(-2.8 + sd)))) * 100 * 100) / 100;
@@ -70,6 +72,8 @@ const checkCustomer = async (id) => {
 };
 
 const updateCustomer = async (id, body) => {
+  validateSchema(body);
+  await checkCustomer(id);
   const updateDate = new Date().toISOString();
   const {
     name, birthDate, sex, healthProblems,
@@ -93,6 +97,7 @@ const updateCustomer = async (id, body) => {
 };
 
 const listById = async (id) => {
+  await checkCustomer(id);
   const customer = await findById(id);
 
   return customer;
@@ -105,6 +110,7 @@ const listAll = async () => {
 };
 
 const deleteCustomerById = async (id) => {
+  await checkCustomer(id);
   await deleteCustomer(id);
 
   const message = { message: `Customer with ID: ${id} succesfull deleted` };

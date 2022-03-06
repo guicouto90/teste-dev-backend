@@ -26,7 +26,7 @@ describe('GET /healthproblems', () => {
     let response;
     before(async () => {
       response = await chai.request(server)
-        .get(`/healthproblems/`);
+        .get('/healthproblems/');
     });
 
     it('Return status 200', () => {
@@ -35,6 +35,6 @@ describe('GET /healthproblems', () => {
 
     it('Return an array', () => {
       expect(response.body).to.be.an('array');
-    })
-  })
+    });
+  });
 });
